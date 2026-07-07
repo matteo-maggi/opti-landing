@@ -211,16 +211,14 @@
     content:''; position:absolute; right:0; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--navy-500);
   }
 
-  /* ---------- value prop cards ---------- */
-  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .value-card{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:30px 26px;}
-  .value-card .vic{
-    width:42px; height:42px; border-radius:10px; background:var(--navy-50);
-    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
-  }
-  .value-card h3{font-family:var(--display); font-weight:600; font-size:17px; margin-bottom:10px;}
+  /* ---------- value prop cards (mirrors .problem-card, opposite palette) ---------- */
+  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border-radius:12px; overflow:hidden; border:1px solid var(--line);}
+  .value-card{background:var(--white); padding:32px 28px; transition:background .2s ease, transform .2s ease;}
+  .value-card:hover{background:var(--navy-50); transform:translateY(-3px);}
+  .value-card .pn{font-family:var(--mono); font-size:12px; color:var(--coral-dark); margin-bottom:18px; display:block;}
+  .value-card h3{font-family:var(--display); font-weight:500; font-size:18px; margin-bottom:10px; color:var(--navy-900);}
   .value-punch{font-family:var(--display); font-weight:600; font-size:14px; color:var(--coral-dark); margin-bottom:10px;}
-  .value-card p{font-size:14px; color:var(--navy-600);}
+  .value-card p{font-size:14px; color:var(--navy-600); line-height:1.6;}
 
   /* ---------- how it works detailed ---------- */
   .how{background:var(--navy-50);}
@@ -309,9 +307,9 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Due funzioni già attive, oggi</span>
-      <h1>Sopralluogo e proposta tecnica preliminare:<br><span class="hl">in un'ora</span> non in una settimana.</h1>
-      <p class="hero-sub">OPTI Proiettiamo il macchinario nello spazio reale del cliente e, lo posizioniamo sulla planimetria, prima che il cliente lasci la stanza.</p>
+      <span class="eyebrow"><span class="dot"></span>Tre funzioni già attive, oggi</span>
+      <h1>Sopralluogo e proposta tecnica:<br><span class="hl">tutto in un'ora</span></h1>
+      <p class="hero-sub">Con OPTI, i tuoi clienti vivono un'esperienza d'acquisto intuitiva e coinvolgente. Comunicare diventa più semplice, si riduce il carico di lavoro interno e risparmi tempo prezioso.</p>
       <div class="hero-ctas">
         <a href="#richiedi-demo" class="btn-primary">Richiedi una demo →</a>
         <a href="#waitlist" class="btn-secondary">Iscriviti alla waitlist</a>
@@ -349,7 +347,7 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">// il problema</span>
-      <h2>Vendere un macchinario che il cliente non riesce a immaginare è una battaglia persa in partenza.</h2>
+      <h2>Non basta mostrare il macchinario: il cliente deve capire come si integra nel suo ambiente.</h2>
     </div>
     <div class="problem-grid">
       <div class="problem-card">
@@ -376,29 +374,27 @@
     <div class="section-head">
       <span class="kicker">// cosa fa oggi</span>
       <h2>Fai vivere al cliente il "dopo", oggi.</h2>
-      <p class="section-sub">Due modi concreti per far vedere tutto al cliente, prima che decida. Non un mockup, non una promessa: li usiamo già sul campo.</p>
+      <p class="section-sub">Tre funzionalità concrete, già in uso sul campo. Non un mockup, non una promessa.</p>
     </div>
 
-    <div class="value-grid" style="margin-bottom:8px; grid-template-columns:1fr 1fr;">
+    <div class="value-grid">
       <div class="value-card">
-        <div class="vic">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coral-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 8v-2a2 2 0 0 1 2 -2h2"/><path d="M4 16v2a2 2 0 0 0 2 2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M16 20h2a2 2 0 0 0 2 -2v-2"/><path d="M12 12.5l4 -2.5"/><path d="M8 10l4 2.5v4.5l4 -2.5v-4.5l-4 -2.5z"/><path d="M8 10v4.5l4 2.5"/>
-          </svg>
-        </div>
+        <span class="pn">01</span>
         <h3>Proiezione AR: il macchinario, già nel tuo spazio</h3>
         <p class="value-punch">Le decisioni del cliente sono facilitate.</p>
         <p>Mostriamo il macchinario nel suo spazio reale — in fabbrica o sullo stand in fiera, anche a centinaia di chilometri dal sito di installazione: in fiera, il macchinario è già lì. Il cliente non deve immaginare nulla: lo vede con i suoi occhi, e decide più in fretta, con più sicurezza.</p>
       </div>
       <div class="value-card">
-        <div class="vic">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coral-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3z"/><path d="M9 4v13"/><path d="M15 7v13"/>
-          </svg>
-        </div>
+        <span class="pn">02</span>
         <h3>Ingombri e note, direttamente sulla planimetria</h3>
         <p class="value-punch">Lo spazio si vede, non si immagina.</p>
         <p>Posizioniamo il macchinario sulla vostra planimetria in tempo reale: ingombri, accessi, spazio — tutto chiaro, per tutti quelli coinvolti nella decisione.</p>
+      </div>
+      <div class="value-card">
+        <span class="pn">03</span>
+        <h3>Catalogo digitale, sempre con te</h3>
+        <p class="value-punch">Tutto pronto, prima ancora di uscire.</p>
+        <p>Modello 3D, schemi 2D standard, foto e video, configurazioni — standard o con optional —, revisioni e ultime novità: tutto il macchinario, in un unico posto, sempre aggiornato.</p>
       </div>
     </div>
   </div>
