@@ -115,7 +115,7 @@
   .btn-secondary:hover{background:var(--navy-50);}
   .hero-meta{font-size:13px; color:var(--navy-300); font-family:var(--mono);}
 
-  /* hero visual: schematic device frame */
+  /* hero visual: demo video frame */
   .hero-visual{position:relative; overflow:visible;}
   .device{
     background:var(--navy-900);
@@ -126,35 +126,12 @@
     z-index:2;
   }
   .device-screen{
-    background:var(--white);
+    background:var(--navy-900);
     border-radius:10px;
     overflow:hidden;
-    aspect-ratio: 9/16;
+    aspect-ratio: 16/9;
   }
-  .device-screen .topbar{
-    height:44px; background:var(--navy-50);
-    display:flex; align-items:center; padding:0 16px; gap:8px;
-    border-bottom:1px solid var(--line);
-  }
-  .device-screen .topbar .pill{font-family:var(--mono); font-size:10px; color:var(--navy-500); background:var(--white); border:1px solid var(--line); border-radius:20px; padding:3px 10px;}
-  .scan-area{
-    margin:16px; border-radius:8px; border:1.5px dashed var(--navy-100);
-    aspect-ratio:1; display:flex; align-items:center; justify-content:center;
-    position:relative; background:
-      linear-gradient(0deg, transparent 24%, var(--navy-50) 25%, var(--navy-50) 26%, transparent 27%, transparent 74%, var(--navy-50) 75%, var(--navy-50) 76%, transparent 77%, transparent),
-      linear-gradient(90deg, transparent 24%, var(--navy-50) 25%, var(--navy-50) 26%, transparent 27%, transparent 74%, var(--navy-50) 75%, var(--navy-50) 76%, transparent 77%, transparent);
-    background-size:25% 25%;
-  }
-  .scan-corner{position:absolute; width:18px; height:18px; border:2px solid var(--coral);}
-  .scan-corner.tl{top:8px; left:8px; border-right:none; border-bottom:none;}
-  .scan-corner.tr{top:8px; right:8px; border-left:none; border-bottom:none;}
-  .scan-corner.bl{bottom:8px; left:8px; border-right:none; border-top:none;}
-  .scan-corner.br{bottom:8px; right:8px; border-left:none; border-top:none;}
-  .scan-label{font-family:var(--mono); font-size:11px; color:var(--navy-300);}
-  .device-screen .infolist{padding:0 16px 16px;}
-  .device-screen .inforow{display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--navy-50); font-size:12px;}
-  .device-screen .inforow .k{color:var(--navy-300); font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.04em;}
-  .device-screen .inforow .v{font-weight:600; color:var(--navy-900);}
+  .device-screen video{width:100%; height:100%; object-fit:cover; display:block;}
   .float-badge{
     position:absolute; background:var(--white); border:1px solid var(--line);
     border-radius:10px; padding:10px 14px; box-shadow:0 12px 30px -12px rgba(26,32,48,0.25);
@@ -288,7 +265,6 @@
   @media (max-width: 860px){
     .hero-grid{grid-template-columns:1fr; gap:48px;}
     h1{font-size:36px;}
-    .float-badge.fb-top{left:4% !important; top:-4% !important;}
     .float-badge.fb-bottom{right:4% !important; bottom:-4% !important;}
     .problem-row{grid-template-columns:1fr; gap:8px; padding:28px 0;}
     .problem-row .pn{display:none;}
@@ -322,36 +298,21 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow"><span class="dot"></span>Tre funzioni già attive, oggi</span>
-      <h1>Sopralluogo e proposta tecnica:<br><span class="hl">tutto in un'ora</span></h1>
+      <span class="eyebrow"><span class="dot"></span>Lo strumento del commerciale tecnico, in trattativa</span>
+      <h1>Sopralluogo e proposta tecnica:<br><span class="hl">in un'ora</span></h1>
       <p class="hero-sub">Con OPTI, i tuoi clienti vivono un'esperienza d'acquisto intuitiva e coinvolgente. Comunicare diventa più semplice, si riduce il carico di lavoro interno e risparmi tempo prezioso.</p>
       <div class="hero-ctas">
         <a href="#richiedi-demo" class="btn-primary">Richiedi una demo →</a>
         <a href="#waitlist" class="btn-secondary">Iscriviti alla waitlist</a>
       </div>
-      <span class="hero-meta">// lo strumento del commerciale tecnico, in trattativa</span>
     </div>
 
     <div class="hero-visual">
-      <div class="float-badge fb-top" style="top:6%; left:-8%;"><span class="ic"></span>Foto sovrimpressione</div>
-      <div class="float-badge fb-bottom" style="bottom:8%; right:-9%;"><span class="ic"></span>Macchinario proiettato</div>
       <div class="device">
         <div class="device-screen">
-          <div class="topbar">
-            <span class="pill">AR live · stand_fiera_03</span>
-          </div>
-          <div class="scan-area">
-            <span class="scan-corner tl"></span>
-            <span class="scan-corner tr"></span>
-            <span class="scan-corner bl"></span>
-            <span class="scan-corner br"></span>
-            <span class="scan-label">modello 3D in proiezione…</span>
-          </div>
-          <div class="infolist">
-            <div class="inforow"><span class="k">Macchinario</span><span class="v">Piegatrice PB-400</span></div>
-            <div class="inforow"><span class="k">Ambiente</span><span class="v">Spazio reale / fiera</span></div>
-            <div class="inforow"><span class="k">Output</span><span class="v">Foto in sovrimpressione</span></div>
-          </div>
+          <video autoplay muted loop playsinline>
+            <source src="assets/AR%20to%20Technical%20Drawing.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -389,7 +350,6 @@
     <div class="section-head">
       <span class="kicker">// cosa fa opti</span>
       <h2>Fai vivere al cliente il "dopo", oggi.</h2>
-      <p class="section-sub">Tre funzionalità già in uso sul campo. I tuoi commerciali le usano adesso, non tra sei mesi.</p>
     </div>
 
     <div class="value-grid">
@@ -416,15 +376,15 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">// uniamoci all'inizio</span>
-      <h2>OPTI è già in uso su due funzioni concrete. Aiutaci a costruire il resto.</h2>
-      <p class="section-sub">Proiezione AR e planimetrie annotate funzionano già oggi. Stiamo parlando con chi vende macchinari e impianti custom per capire come evolverle. Due modi per entrare in contatto.</p>
+      <h2>OPTI è già in uso su tre funzioni concrete. Aiutaci a costruire il resto.</h2>
+      <p class="section-sub">Stiamo parlando con chi vende macchinari e impianti custom per capire come evolverle. Due modi per entrare in contatto.</p>
     </div>
 
     <div class="cta-grid">
       <div class="cta-panel">
         <span class="tag">Per chi vende macchinari, oggi</span>
         <h3>Richiedi una demo</h3>
-        <p>Una call di 20 minuti per vedere la proiezione AR e l'annotazione planimetrie dal vivo, e capire se hanno senso per la tua prossima trattativa.</p>
+        <p>Una call di 20 minuti per capire se le nostre funzionalità hanno senso per la tua prossima trattativa.</p>
         <form id="form-demo">
           <div class="field">
             <label for="demo-nome">Nome e cognome</label>
@@ -455,7 +415,7 @@
       <div class="cta-panel alt" id="waitlist">
         <span class="tag">Per seguire lo sviluppo</span>
         <h3>Iscriviti alla waitlist</h3>
-        <p>Niente spam: solo aggiornamenti reali su come sta evolvendo OPTI — verso un configuratore che unisce planimetrie rese in 3D e scansione dello spazio, per posizionare il macchinario senza più margine di errore.</p>
+        <p>Niente spam: solo aggiornamenti reali su come sta evolvendo OPTI</p>
         <form id="form-waitlist">
           <div class="field">
             <label for="wl-email">La tua email</label>
