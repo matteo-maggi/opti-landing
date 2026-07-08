@@ -28,6 +28,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
+  html, body{overflow-x:hidden; max-width:100%;}
   body{
     font-family:var(--body);
     background:var(--paper);
@@ -184,12 +185,16 @@
   .problem{background:var(--navy-900); color:var(--white);}
   .problem .kicker{color:var(--navy-300);}
   .problem h2{color:var(--white);}
-  .problem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.12); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.12);}
-  .problem-card{background:var(--navy-900); padding:32px 28px; transition:background .2s ease, transform .2s ease;}
-  .problem-card:hover{background:#212841; transform:translateY(-3px);}
-  .problem-card .pn{font-family:var(--mono); font-size:12px; color:var(--coral); margin-bottom:18px;}
-  .problem-card h3{font-family:var(--display); font-weight:500; font-size:18px; margin-bottom:10px; color:var(--white);}
-  .problem-card p{font-size:14px; color:var(--navy-300); line-height:1.6;}
+  .problem-list{display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,0.12);}
+  .problem-row{
+    display:grid; grid-template-columns:64px 1.1fr 1fr; gap:40px; align-items:baseline;
+    padding:40px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+    transition:background .2s ease;
+  }
+  .problem-row:hover{background:rgba(255,255,255,0.03);}
+  .problem-row .pn{font-family:var(--display); font-size:15px; font-weight:600; color:var(--coral); align-self:start; padding-top:6px;}
+  .problem-row h3{font-family:var(--display); font-weight:600; letter-spacing:-0.01em; font-size:28px; line-height:1.2; color:var(--white);}
+  .problem-row p{font-size:15px; color:var(--navy-100); line-height:1.65;}
   .ps-divider{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; font-weight:600; color:var(--coral-light); background:rgba(216,90,48,0.14); border:1px solid rgba(216,90,48,0.32); text-transform:uppercase; letter-spacing:0.05em; padding:5px 12px; border-radius:20px; margin:22px 0 16px;}
   .ps-divider::before{content:'↓'; font-size:11px;}
   .ps-solution{border-left:2px solid var(--coral); padding-left:16px;}
@@ -278,7 +283,11 @@
   @media (max-width: 860px){
     .hero-grid{grid-template-columns:1fr; gap:48px;}
     h1{font-size:36px;}
-    .problem-grid{grid-template-columns:1fr;}
+    .float-badge.fb-top{left:4% !important; top:-4% !important;}
+    .float-badge.fb-bottom{right:4% !important; bottom:-4% !important;}
+    .problem-row{grid-template-columns:1fr; gap:8px; padding:28px 0;}
+    .problem-row .pn{display:none;}
+    .problem-row h3{font-size:21px;}
     .flow-steps{grid-template-columns:1fr; gap:32px;}
     .value-grid{grid-template-columns:1fr;}
     .how-row{grid-template-columns:1fr; gap:20px;}
@@ -294,7 +303,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><img src="assets/logo-dark.png" alt="OPTI"></div>
+    <div class="brand"><img src="assets/logo-dark.png" alt="">OPTI</div>
     <div class="links">
       <a href="#problema">Il problema</a>
       <a href="#flusso">Come funziona</a>
@@ -318,8 +327,8 @@
     </div>
 
     <div class="hero-visual">
-      <div class="float-badge" style="top:6%; left:-8%;"><span class="ic"></span>Foto sovrimpressione</div>
-      <div class="float-badge" style="bottom:8%; right:-9%;"><span class="ic"></span>Macchinario proiettato</div>
+      <div class="float-badge fb-top" style="top:6%; left:-8%;"><span class="ic"></span>Foto sovrimpressione</div>
+      <div class="float-badge fb-bottom" style="bottom:8%; right:-9%;"><span class="ic"></span>Macchinario proiettato</div>
       <div class="device">
         <div class="device-screen">
           <div class="topbar">
@@ -347,23 +356,20 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">// il problema</span>
-      <h2>Non basta mostrare il macchinario: il cliente deve capire come si integra nel suo ambiente.</h2>
+      <h2>Dove OPTI interviene</h2>
     </div>
     <div class="problem-grid">
       <div class="problem-card">
         <span class="pn">01</span>
-        <h3>Un prodotto difficile da comunicare</h3>
-        <p>Un macchinario complesso è difficile da spiegare a parole o con un rendering statico: senza vederlo davvero, il cliente non si convince.</p>
+        <h3>Una gamma di prodotti ad alta complessità, in continua evoluzione da presentare e vendere globalmente</h3>
       </div>
       <div class="problem-card">
         <span class="pn">02</span>
-        <h3>Lo spazio non si capisce da un disegno</h3>
-        <p>Una planimetria vuota lascia troppo all'immaginazione: se il macchinario ci sta, come si inserisce, dove va l'accesso. E quando si immagina, spesso si sbaglia.</p>
+        <h3>Non basta mostrare il macchinario: il cliente deve capire come si integra nel suo ambiente.Una planimetria vuota non convince nessuno</h3>
       </div>
       <div class="problem-card">
         <span class="pn">03</span>
-        <h3>In fiera è ancora più difficile</h3>
-        <p>Portare il macchinario fisico in fiera è costoso o impossibile: senza un modo per farlo vedere dal vivo, la trattativa parte già in salita.</p>
+        <h3>In fiera, il macchinario non c'èPortarlo fisicamente è costoso o impossibile. Senza vederlo dal vivo, la trattativa parte già in salita.</h3>
       </div>
     </div>
   </div>
@@ -469,7 +475,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="brand"><img src="assets/logo-white.png" alt="OPTI"></div>
+    <div class="brand"><img src="assets/logo-white.png" alt="">OPTI</div>
     <span class="fnote">// progetto in validazione · 2026</span>
   </div>
 </footer>
