@@ -209,7 +209,7 @@ h2{
 .page-content p{font-size:15px; color:var(--navy-600); margin-bottom:14px; line-height:1.7;}
 .page-content ul{margin:0 0 14px 20px; color:var(--navy-600); font-size:15px; line-height:1.7;}
 .page-content a{color:var(--coral-dark); text-decoration:underline;}
-.todo-flag{display:inline-block; font-family:var(--mono); font-size:11px; font-weight:600; color:#b3261e; background:#fbe9e7; padding:2px 8px; border-radius:4px; margin-left:4px;}
+.todo-flag{display:inline-block; font-family:var(--mono); font-size:11px; font-weight:500; color:#b3261e; background:#fbe9e7; padding:2px 8px; border-radius:4px; margin-left:4px;}
 
 /* ---------- footer ---------- */
 footer{background:var(--navy-900); color:var(--navy-300); padding:48px 0 32px;}

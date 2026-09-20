@@ -11,9 +11,9 @@
 <link rel="icon" type="image/svg+xml" href="assets/logo-dark.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/svg+xml" href="assets/logo-white.svg" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/space-grotesk-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -45,7 +45,7 @@
     <div class="hero-visual">
       <div class="device">
         <div class="device-screen">
-          <video id="hero-video" muted loop playsinline preload="metadata">
+          <video id="hero-video" muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
             <source src="assets/ar-to-technical-drawing.mp4" type="video/mp4">
           </video>
         </div>
