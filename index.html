@@ -200,7 +200,9 @@
   </div>
 </footer>
 
-<script src="config.js"></script>
+<!-- bump ?v= whenever config.js changes: it's cached for 10 min (max-age=600)
+     and browsers won't re-check the network before that without a new URL -->
+<script src="config.js?v=2"></script>
 <script>
   var heroVideo = document.getElementById('hero-video');
   if(heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
