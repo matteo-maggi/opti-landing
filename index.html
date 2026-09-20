@@ -296,6 +296,7 @@
       .then(function(res){ return res.json(); })
       .then(function(data){
         if(data.success){
+          submitBtn.textContent = 'Inviato ✓';
           msg.classList.add('show');
           form.querySelectorAll('input, select, button').forEach(function(el){ el.disabled = true; });
         } else {
