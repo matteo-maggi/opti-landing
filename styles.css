@@ -189,6 +189,8 @@ h2{
 .cta-panel p{font-size:14px; color:var(--navy-600); margin-bottom:24px;}
 .field{margin-bottom:14px;}
 .field label{display:block; font-size:12px; font-weight:500; color:var(--navy-600); margin-bottom:6px;}
+.field label .optional{color:var(--navy-300); font-weight:400;}
+.field textarea{resize:vertical;}
 .field input, .field select, .field textarea{
   width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:7px;
   font-family:var(--body); font-size:16px; background:var(--white); color:var(--navy-900);

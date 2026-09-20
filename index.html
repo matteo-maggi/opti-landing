@@ -35,6 +35,10 @@
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="styles.css">
+<!-- bump ?v= quando cambia config.js: è in cache 10 minuti (max-age=600)
+     e senza URL nuovo il browser non ricontrolla la rete -->
+<script src="config.js?v=3"></script>
+<script src="analytics.js?v=1"></script>
 </head>
 <body>
 
@@ -177,6 +181,15 @@
             <input type="email" id="demo-email" name="email" autocomplete="email" required>
           </div>
           <div class="field">
+            <label for="demo-ruolo">Il tuo ruolo</label>
+            <select id="demo-ruolo" name="ruolo">
+              <option>Commerciale tecnico</option>
+              <option>Ufficio tecnico</option>
+              <option>Titolare / direzione</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="field">
             <label for="demo-settore">Cosa vendete</label>
             <select id="demo-settore" name="settore">
               <option>Macchinari custom</option>
@@ -184,6 +197,10 @@
               <option>Linee di automazione</option>
               <option>Altro macchinario industriale</option>
             </select>
+          </div>
+          <div class="field">
+            <label for="demo-metodo">Come prepari oggi la proposta dopo un sopralluogo? <span class="optional">(facoltativo)</span></label>
+            <textarea id="demo-metodo" name="metodo" rows="3"></textarea>
           </div>
           <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="form_type" value="demo">
@@ -253,9 +270,6 @@
   </div>
 </footer>
 
-<!-- bump ?v= whenever config.js changes: it's cached for 10 min (max-age=600)
-     and browsers won't re-check the network before that without a new URL -->
-<script src="config.js?v=2"></script>
 <script>
   var heroVideo = document.getElementById('hero-video');
   if(heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -289,7 +303,7 @@
 
   // ---------- messaggi di validazione in italiano ----------
   function applyItalianValidationMessages(form){
-    form.querySelectorAll('input, select').forEach(function(el){
+    form.querySelectorAll('input, select, textarea').forEach(function(el){
       el.addEventListener('invalid', function(){
         if(el.validity.valueMissing){
           el.setCustomValidity('Campo obbligatorio.');
@@ -349,9 +363,13 @@
       .then(function(res){ return res.json(); })
       .then(function(data){
         if(data.success){
+          window.optiTrack('form_submit', {
+            form_type: form.querySelector('[name="form_type"]').value,
+            src: form.querySelector('[name="src"]').value || 'direct'
+          });
           submitBtn.textContent = 'Inviato ✓';
           msg.classList.add('show');
-          form.querySelectorAll('input, select, button').forEach(function(el){ el.disabled = true; });
+          form.querySelectorAll('input, select, textarea, button').forEach(function(el){ el.disabled = true; });
         } else {
           throw new Error(data.message || 'Invio non riuscito');
         }
@@ -367,6 +385,20 @@
 
   handleForm('form-demo', 'demo-msg', 'demo-err');
   handleForm('form-waitlist', 'wl-msg', 'wl-err');
+
+  // ---------- eventi analytics (no-op finché config.js non ha un provider) ----------
+  function currentSrc(){
+    try { return sessionStorage.getItem('opti_src') || 'direct'; } catch(e){ return 'direct'; }
+  }
+  document.querySelectorAll('a[href="#richiedi-demo"], a[href="#waitlist"]').forEach(function(link){
+    link.addEventListener('click', function(){
+      window.optiTrack('cta_click', {
+        cta: link.getAttribute('href') === '#waitlist' ? 'waitlist' : 'demo',
+        posizione: link.closest('nav') ? 'nav' : 'pagina',
+        src: currentSrc()
+      });
+    });
+  });
 </script>
 
 </body>

@@ -14,6 +14,10 @@
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="styles.css">
+<!-- bump ?v= quando cambia config.js: è in cache 10 minuti (max-age=600)
+     e senza URL nuovo il browser non ricontrolla la rete -->
+<script src="config.js?v=3"></script>
+<script src="analytics.js?v=1"></script>
 </head>
 <body>
 
@@ -44,7 +48,7 @@
     Email di contatto: [DA CONFERMARE: indirizzo email] <span class="todo-flag">DA CONFERMARE</span></p>
 
     <h2>Dati raccolti</h2>
-    <p>Attraverso i moduli "Raccontami come lavori" e "Seguine lo sviluppo" raccogliamo: nome e cognome (solo form demo), azienda (solo form demo), indirizzo email, ruolo o settore di attività, e alcuni dati tecnici legati alla sorgente della visita (parametro <code>src</code>, parametri UTM, URL della pagina) per capire da quale canale arrivano le richieste.</p>
+    <p>Attraverso i moduli "Raccontami come lavori" e "Seguine lo sviluppo" raccogliamo: nome e cognome (solo form demo), azienda (solo form demo), indirizzo email, ruolo e settore di attività, la risposta facoltativa alla domanda su come viene preparata la proposta dopo un sopralluogo, il consenso agli aggiornamenti (solo waitlist) e alcuni dati tecnici legati alla sorgente della visita (parametro <code>src</code>, parametri UTM, URL della pagina) per capire da quale canale arrivano le richieste.</p>
 
     <h2>Finalità e base giuridica</h2>
     <ul>
@@ -60,13 +64,13 @@
     <p>I dati inviati tramite i moduli vengono trattati dai seguenti fornitori, in qualità di responsabili del trattamento o titolari autonomi secondo i rispettivi termini:</p>
     <ul>
       <li><strong>Web3Forms</strong> — invio e recapito email delle richieste dai moduli del sito. [DA CONFERMARE: verificare dove sono ospitati i dati (UE/USA) e le clausole contrattuali applicabili] <span class="todo-flag">DA CONFERMARE</span></li>
-      <li><strong>[DA CONFERMARE: strumento waitlist/newsletter, es. MailerLite o Brevo]</strong> <span class="todo-flag">DA CONFERMARE</span> — gestione della lista di chi si iscrive alla waitlist.</li>
+      <li>Le iscrizioni alla waitlist passano dallo stesso modulo: oggi non viene usato alcuno strumento di newsletter esterno. Se in futuro ne verrà adottato uno, questa informativa sarà aggiornata prima del primo invio.</li>
       <li><strong>GitHub Pages</strong> — hosting statico del sito.</li>
       <li>[DA CONFERMARE: eventuale strumento di analytics, es. Plausible o Umami] <span class="todo-flag">DA CONFERMARE</span></li>
     </ul>
 
     <h2>Cookie</h2>
-    <p>Il sito non utilizza cookie di profilazione. [DA CONFERMARE: verificare se gli embed (calendario, video, font) impostano cookie tecnici o di terze parti, ed eventualmente aggiornare questa sezione o aggiungere un banner] <span class="todo-flag">DA CONFERMARE</span></p>
+    <p>Il sito non utilizza cookie di profilazione e non carica risorse da terze parti: i font sono ospitati sul nostro dominio e il video è servito dal sito stesso. L'unica richiesta esterna parte quando invii un modulo, verso Web3Forms. Se verrà attivato uno strumento di analytics, sarà uno strumento senza cookie: in caso contrario questa sezione andrà aggiornata e servirà un banner. [DA CONFERMARE: strumento di analytics scelto, es. Plausible o Umami] <span class="todo-flag">DA CONFERMARE</span></p>
 
     <h2>Diritti dell'interessato</h2>
     <p>In qualsiasi momento puoi richiedere l'accesso, la rettifica, la cancellazione o la limitazione del trattamento dei tuoi dati, oppure opporti al trattamento e richiederne la portabilità, scrivendo a [DA CONFERMARE: indirizzo email] <span class="todo-flag">DA CONFERMARE</span>. Hai inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali.</p>
