@@ -7,286 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy-50:#eef0f5;
-    --navy-100:#cfd4e3;
-    --navy-300:#8b94b3;
-    --navy-500:#465379;
-    --navy-600:#3a4563;
-    --navy-700:#2d3650;
-    --navy-900:#1a2030;
-    --coral:#d85a30;
-    --coral-dark:#a8431f;
-    --coral-light:#f5dccf;
-    --paper:#f7f6f3;
-    --white:#ffffff;
-    --line:rgba(26,32,48,0.12);
-    --mono: 'JetBrains Mono', monospace;
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'Inter', sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  html, body{overflow-x:hidden; max-width:100%;}
-  body{
-    font-family:var(--body);
-    background:var(--paper);
-    color:var(--navy-900);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{display:block; max-width:100%;}
-  a{color:inherit;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
-  ::selection{background:var(--coral-light); color:var(--coral-dark);}
-
-  /* ---------- circuit motif (signature element) ---------- */
-  .circuit-line{
-    position:absolute;
-    pointer-events:none;
-  }
-
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(247,246,243,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:72px;
-  }
-  .brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:600; font-size:19px; letter-spacing:-0.01em;}
-  .brand img{height:30px; width:auto;}
-  nav .links{display:flex; align-items:center; gap:32px; font-size:14px; font-weight:500;}
-  nav .links a{text-decoration:none; color:var(--navy-600); transition:color .15s;}
-  nav .links a:hover{color:var(--navy-900);}
-  .btn-nav{
-    background:var(--navy-900); color:var(--white) !important;
-    padding:13px 20px; border-radius:6px; font-size:14px; font-weight:500;
-    text-decoration:none; transition:background .15s;
-    display:inline-flex; align-items:center;
-  }
-  .btn-nav:hover{background:var(--coral);}
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    padding:96px 0 88px;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-grid{
-    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:64px; align-items:center;
-  }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--coral-dark); background:var(--coral-light);
-    padding:6px 12px; border-radius:4px; margin-bottom:24px;
-  }
-  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--coral); display:inline-block;}
-  h1{
-    font-family:var(--display); font-weight:600; letter-spacing:-0.02em;
-    font-size:52px; line-height:1.06; color:var(--navy-900);
-    margin-bottom:24px;
-  }
-  h1 .hl{color:var(--coral); font-style:italic; font-weight:500;}
-  .hero-sub{
-    font-size:18px; color:var(--navy-600); max-width:480px; margin-bottom:36px;
-  }
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px;}
-  .btn-primary{
-    background:var(--navy-900); color:var(--white);
-    padding:15px 28px; border-radius:7px; font-weight:500; font-size:15px;
-    text-decoration:none; border:none; cursor:pointer;
-    transition:transform .15s, background .15s;
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn-primary:hover{background:var(--coral); transform:translateY(-1px);}
-  .btn-secondary{
-    background:transparent; color:var(--navy-900);
-    padding:15px 28px; border-radius:7px; font-weight:500; font-size:15px;
-    text-decoration:none; border:1px solid var(--navy-900);
-    transition:background .15s;
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn-secondary:hover{background:var(--navy-50);}
-  .hero-meta{font-size:13px; color:var(--navy-300); font-family:var(--mono);}
-
-  /* hero visual: demo video frame */
-  .hero-visual{position:relative; overflow:visible;}
-  .device{
-    background:var(--navy-900);
-    border-radius:18px;
-    padding:14px;
-    box-shadow:0 24px 60px -20px rgba(26,32,48,0.35);
-    position:relative;
-    z-index:2;
-  }
-  .device-screen{
-    background:var(--navy-900);
-    border-radius:10px;
-    overflow:hidden;
-    aspect-ratio: 16/9;
-  }
-  .device-screen video{width:100%; height:100%; object-fit:cover; display:block;}
-  .float-badge{
-    position:absolute; background:var(--white); border:1px solid var(--line);
-    border-radius:10px; padding:10px 14px; box-shadow:0 12px 30px -12px rgba(26,32,48,0.25);
-    font-size:12px; font-weight:600; z-index:3; display:flex; align-items:center; gap:8px;
-  }
-  .float-badge .ic{width:8px; height:8px; border-radius:50%; background:var(--coral);}
-
-  /* ---------- logos strip ---------- */
-  .strip{padding:36px 0; border-bottom:1px solid var(--line);}
-  .strip .wrap{display:flex; align-items:center; gap:28px; flex-wrap:wrap;}
-  .strip-label{font-family:var(--mono); font-size:12px; color:var(--navy-300); white-space:nowrap;}
-  .strip-items{display:flex; gap:32px; flex-wrap:wrap; font-family:var(--display); font-weight:500; font-size:15px; color:var(--navy-300);}
-
-  /* ---------- section generic ---------- */
-  section{padding:96px 0;}
-  .section-head{max-width:620px; margin-bottom:56px;}
-  .kicker{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--navy-300); margin-bottom:14px; display:block;
-  }
-  h2{
-    font-family:var(--display); font-weight:600; letter-spacing:-0.015em;
-    font-size:36px; line-height:1.16; color:var(--navy-900);
-  }
-  .section-sub{font-size:16px; color:var(--navy-600); margin-top:14px;}
-
-  /* ---------- problem section ---------- */
-  .problem{background:var(--navy-900); color:var(--white);}
-  .problem .kicker{color:var(--navy-300);}
-  .problem h2{color:var(--white);}
-  .problem-list{display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,0.12);}
-  .problem-row{
-    display:grid; grid-template-columns:64px 1.1fr 1fr; gap:40px; align-items:baseline;
-    padding:40px 0; border-bottom:1px solid rgba(255,255,255,0.12);
-    transition:background .2s ease;
-  }
-  .problem-row:hover{background:rgba(255,255,255,0.03);}
-  .problem-row .pn{font-family:var(--display); font-size:15px; font-weight:600; color:var(--coral); align-self:start; padding-top:6px;}
-  .problem-row h3{font-family:var(--display); font-weight:600; letter-spacing:-0.01em; font-size:28px; line-height:1.2; color:var(--white);}
-  .problem-row p{font-size:15px; color:var(--navy-100); line-height:1.65;}
-  .problem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.12); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.12);}
-  .problem-card{background:var(--navy-900); padding:32px 28px; transition:background .2s ease, transform .2s ease;}
-  .problem-card:hover{background:#212841; transform:translateY(-3px);}
-  .problem-card .pn{font-family:var(--mono); font-size:12px; color:var(--coral); margin-bottom:18px; display:block;}
-  .problem-card h3{font-family:var(--display); font-weight:500; font-size:18px; margin-bottom:10px; color:var(--white);}
-  .problem-card p{font-size:14px; color:var(--navy-300); line-height:1.6;}
-  .ps-divider{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; font-weight:600; color:var(--coral-light); background:rgba(216,90,48,0.14); border:1px solid rgba(216,90,48,0.32); text-transform:uppercase; letter-spacing:0.05em; padding:5px 12px; border-radius:20px; margin:22px 0 16px;}
-  .ps-divider::before{content:'↓'; font-size:11px;}
-  .ps-solution{border-left:2px solid var(--coral); padding-left:16px;}
-  .ps-solution-title{font-family:var(--display); font-weight:600; font-size:15px; color:var(--white); margin-bottom:8px; line-height:1.35;}
-  .ps-solution-text{font-size:13px; color:var(--navy-100); line-height:1.6;}
-
-  /* ---------- flow / signature section ---------- */
-  .flow{position:relative;}
-  .flow-steps{display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:8px;}
-  .flow-step{position:relative; padding:28px 22px 0 0;}
-  .flow-step .fnum{font-family:var(--mono); font-size:12px; color:var(--coral-dark); margin-bottom:16px; display:block;}
-  .flow-step h3{font-family:var(--display); font-weight:600; font-size:18px; margin-bottom:10px;}
-  .flow-step p{font-size:14px; color:var(--navy-600);}
-  .flow-rail{position:relative; height:2px; background:var(--navy-100); margin:0 0 8px; border-radius:2px;}
-  .flow-rail::before{
-    content:''; position:absolute; left:0; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--coral);
-  }
-  .flow-rail::after{
-    content:''; position:absolute; right:0; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--navy-500);
-  }
-
-  /* ---------- value prop cards (mirrors .problem-card, opposite palette) ---------- */
-  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border-radius:12px; overflow:hidden; border:1px solid var(--line);}
-  .value-card{background:var(--white); padding:32px 28px; transition:background .2s ease, transform .2s ease;}
-  .value-card:hover{background:var(--navy-50); transform:translateY(-3px);}
-  .value-card .pn{font-family:var(--mono); font-size:12px; color:var(--coral-dark); margin-bottom:18px; display:block;}
-  .value-card h3{font-family:var(--display); font-weight:500; font-size:18px; margin-bottom:10px; color:var(--navy-900);}
-  .value-card p{font-size:14px; color:var(--navy-600); line-height:1.6;}
-
-  /* ---------- how it works detailed ---------- */
-  .how{background:var(--navy-50);}
-  .how-row{
-    display:grid; grid-template-columns:0.5fr 1fr 1fr; gap:40px; align-items:center;
-    padding:40px 0; border-bottom:1px solid var(--line);
-  }
-  .how-row:last-child{border-bottom:none;}
-  .how-num{font-family:var(--display); font-size:42px; font-weight:600; color:var(--navy-100);}
-  .how-text h3{font-family:var(--display); font-weight:600; font-size:20px; margin-bottom:8px;}
-  .how-text p{font-size:15px; color:var(--navy-600);}
-  .how-visual{
-    background:var(--white); border:1px solid var(--line); border-radius:10px;
-    height:140px; display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); font-size:12px; color:var(--navy-300); position:relative; overflow:hidden;
-  }
-
-  /* ---------- early adopter / social proof ---------- */
-  .proof{}
-  .proof-card{
-    background:var(--navy-900); border-radius:16px; padding:48px;
-    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
-    position:relative; overflow:hidden;
-  }
-  .proof-quote{color:var(--white); font-family:var(--display); font-size:22px; font-weight:500; line-height:1.4; letter-spacing:-0.01em;}
-  .proof-meta{font-family:var(--mono); font-size:12px; color:var(--navy-300); margin-top:20px;}
-  .proof-stats{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-  .proof-stat{border-left:2px solid var(--coral); padding-left:16px;}
-  .proof-stat .num{font-family:var(--display); font-size:32px; font-weight:600; color:var(--white);}
-  .proof-stat .lbl{font-size:12px; color:var(--navy-300); margin-top:4px;}
-
-  /* ---------- CTA / forms section ---------- */
-  .cta-section{background:var(--white);}
-  .cta-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;}
-  .cta-panel{background:var(--white); padding:44px;}
-  .cta-panel.alt{background:var(--paper);}
-  .cta-panel .tag{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--coral-dark); background:var(--coral-light); display:inline-block; padding:4px 10px; border-radius:4px; margin-bottom:18px;}
-  .cta-panel h3{font-family:var(--display); font-weight:600; font-size:22px; margin-bottom:10px;}
-  .cta-panel p{font-size:14px; color:var(--navy-600); margin-bottom:24px;}
-  .field{margin-bottom:14px;}
-  .field label{display:block; font-size:12px; font-weight:500; color:var(--navy-600); margin-bottom:6px;}
-  .field input, .field select, .field textarea{
-    width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:7px;
-    font-family:var(--body); font-size:14px; background:var(--white); color:var(--navy-900);
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--navy-500); outline-offset:1px; border-color:var(--navy-500);}
-  .form-msg{font-size:13px; margin-top:12px; display:none;}
-  .form-msg.show{display:block;}
-  .form-msg.ok{color:#1a7a4c;}
-
-  /* flex/grid items default to a content-based min-width, which stops text
-     from wrapping on narrow viewports and gets clipped by overflow-x:hidden */
-  .hero-grid > *, nav .wrap > *, .problem-grid > *, .value-grid > *, .cta-grid > *, .hero-ctas > *{
-    min-width:0;
-  }
-
-  /* ---------- footer ---------- */
-  footer{background:var(--navy-900); color:var(--navy-300); padding:48px 0 32px;}
-  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
-  footer .brand{color:var(--white);}
-  footer .fnote{font-family:var(--mono); font-size:12px;}
-
-  @media (max-width: 860px){
-    .hero-grid{grid-template-columns:1fr; gap:48px;}
-    h1{font-size:36px;}
-    .float-badge.fb-bottom{right:4% !important; bottom:-4% !important;}
-    .problem-row{grid-template-columns:1fr; gap:8px; padding:28px 0;}
-    .problem-row .pn{display:none;}
-    .problem-row h3{font-size:21px;}
-    .problem-grid{grid-template-columns:1fr;}
-    .flow-steps{grid-template-columns:1fr; gap:32px;}
-    .value-grid{grid-template-columns:1fr;}
-    .how-row{grid-template-columns:1fr; gap:20px;}
-    .how-num{font-size:28px;}
-    .proof-card{grid-template-columns:1fr; padding:32px;}
-    .cta-grid{grid-template-columns:1fr;}
-    nav .links{display:none;}
-    .strip .wrap{flex-direction:column; align-items:flex-start;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -395,27 +116,36 @@
         <form id="form-demo">
           <div class="field">
             <label for="demo-nome">Nome e cognome</label>
-            <input type="text" id="demo-nome" required>
+            <input type="text" id="demo-nome" name="nome" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="demo-azienda">Azienda</label>
-            <input type="text" id="demo-azienda" required>
+            <input type="text" id="demo-azienda" name="azienda" autocomplete="organization" required>
           </div>
           <div class="field">
             <label for="demo-email">Email di lavoro</label>
-            <input type="email" id="demo-email" required>
+            <input type="email" id="demo-email" name="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="demo-settore">Cosa vendete</label>
-            <select id="demo-settore">
+            <select id="demo-settore" name="settore">
               <option>Macchinari custom</option>
               <option>Impianti industriali</option>
               <option>Linee di automazione</option>
               <option>Altro macchinario industriale</option>
             </select>
           </div>
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="form_type" value="demo">
+          <input type="hidden" name="src">
+          <input type="hidden" name="utm_source">
+          <input type="hidden" name="utm_medium">
+          <input type="hidden" name="utm_campaign">
+          <input type="hidden" name="page_url">
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Richiedi la demo →</button>
-          <p class="form-msg ok" id="demo-msg">Richiesta inviata. Ti contattiamo entro 48 ore per fissare la call.</p>
+          <p class="form-note">Uso i tuoi dati solo per ricontattarti su OPTI. <a href="/privacy.html">Informativa privacy</a>.</p>
+          <p class="form-msg ok" id="demo-msg">Richiesta inviata. Ti ricontattiamo per fissare la call.</p>
+          <p class="form-msg err" id="demo-err">Invio non riuscito. Riprova, oppure scrivimi direttamente a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.<!-- TODO [DA CONFERMARE]: indirizzo email definitivo (P0-7) --></p>
         </form>
       </div>
 
@@ -426,11 +156,11 @@
         <form id="form-waitlist">
           <div class="field">
             <label for="wl-email">La tua email</label>
-            <input type="email" id="wl-email" required placeholder="nome@azienda.it">
+            <input type="email" id="wl-email" name="email" autocomplete="email" required placeholder="nome@azienda.it">
           </div>
           <div class="field">
             <label for="wl-ruolo">Il tuo interesse principale</label>
-            <select id="wl-ruolo">
+            <select id="wl-ruolo" name="ruolo">
               <option>Vendite / commerciale tecnico</option>
               <option>Ufficio tecnico</option>
               <option>Titolare / direzione</option>
@@ -438,8 +168,22 @@
               <option>Altro</option>
             </select>
           </div>
+          <div class="field field-consent">
+            <label class="consent-label">
+              <input type="checkbox" id="wl-consenso" required>
+              Acconsento a ricevere aggiornamenti su OPTI. Posso cancellarmi quando voglio. <a href="/privacy.html">Informativa privacy</a>.
+            </label>
+          </div>
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="form_type" value="waitlist">
+          <input type="hidden" name="src">
+          <input type="hidden" name="utm_source">
+          <input type="hidden" name="utm_medium">
+          <input type="hidden" name="utm_campaign">
+          <input type="hidden" name="page_url">
           <button type="submit" class="btn-secondary" style="width:100%; justify-content:center;">Iscrivimi →</button>
           <p class="form-msg ok" id="wl-msg">Iscrizione confermata. A presto.</p>
+          <p class="form-msg err" id="wl-err">Invio non riuscito. Riprova, oppure scrivimi direttamente a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.<!-- TODO [DA CONFERMARE]: indirizzo email definitivo (P0-7) --></p>
         </form>
       </div>
     </div>
@@ -453,56 +197,117 @@
   </div>
 </footer>
 
+<script src="config.js"></script>
 <script>
   var heroVideo = document.getElementById('hero-video');
   if(heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     heroVideo.play().catch(function(){});
   }
 
-  var SHEETS_ENDPOINT = "INSERISCI_QUI_URL_WEB_APP";
+  // ---------- tracciamento sorgente (?src=, utm_*) ----------
+  // Valori attesi per src: bimu, at-vicenza, linkedin, biglietto. Assente -> direct.
+  (function captureTracking(){
+    var params = new URLSearchParams(window.location.search);
+    var keys = ['src', 'utm_source', 'utm_medium', 'utm_campaign'];
+    keys.forEach(function(key){
+      var fromUrl = params.get(key);
+      if(fromUrl){
+        sessionStorage.setItem('opti_' + key, fromUrl);
+      }
+    });
+    if(!sessionStorage.getItem('opti_src')){
+      sessionStorage.setItem('opti_src', 'direct');
+    }
+  })();
 
-  function handleForm(formId, msgId, sheetName, fields){
+  function fillTrackingFields(form){
+    ['src', 'utm_source', 'utm_medium', 'utm_campaign'].forEach(function(key){
+      var field = form.querySelector('[name="' + key + '"]');
+      if(field){ field.value = sessionStorage.getItem('opti_' + key) || ''; }
+    });
+    var pageUrlField = form.querySelector('[name="page_url"]');
+    if(pageUrlField){ pageUrlField.value = window.location.href; }
+  }
+
+  // ---------- messaggi di validazione in italiano ----------
+  function applyItalianValidationMessages(form){
+    form.querySelectorAll('input, select').forEach(function(el){
+      el.addEventListener('invalid', function(){
+        if(el.validity.valueMissing){
+          el.setCustomValidity('Campo obbligatorio.');
+        } else if(el.validity.typeMismatch && el.type === 'email'){
+          el.setCustomValidity('Inserisci un indirizzo email valido.');
+        } else {
+          el.setCustomValidity('Valore non valido.');
+        }
+      });
+      el.addEventListener('input', function(){ el.setCustomValidity(''); });
+      el.addEventListener('change', function(){ el.setCustomValidity(''); });
+    });
+  }
+
+  // ---------- invio form via Web3Forms ----------
+  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
+  function handleForm(formId, msgId, errId){
     var form = document.getElementById(formId);
     var msg = document.getElementById(msgId);
+    var err = document.getElementById(errId);
+
+    applyItalianValidationMessages(form);
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      err.classList.remove('show');
 
-      var payload = { sheet: sheetName, timestamp: new Date().toISOString() };
-      fields.forEach(function(f){
-        payload[f] = document.getElementById(formId === 'form-demo' ? 'demo-'+f : 'wl-'+f).value;
-      });
+      var honeypot = form.querySelector('[name="botcheck"]');
+      if(honeypot && honeypot.checked){ return; }
+
+      fillTrackingFields(form);
 
       var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Invio in corso…';
 
-      if(SHEETS_ENDPOINT.indexOf('INSERISCI_QUI') !== -1){
-        console.warn('SHEETS_ENDPOINT non configurato: i dati non vengono salvati. Vedi google-apps-script.txt');
-        msg.textContent = 'Configurazione in corso: dati non ancora salvati su sheet.';
-        msg.classList.add('show');
-        form.querySelectorAll('input, select, button').forEach(function(el){ el.disabled = true; });
+      var accessKey = window.OPTI_CONFIG && window.OPTI_CONFIG.web3formsAccessKey;
+      if(!accessKey || accessKey.indexOf('INSERISCI_QUI') !== -1){
+        console.warn('Web3Forms non configurato: vedi config.js (web3formsAccessKey).');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        err.textContent = 'Modulo non ancora configurato: la richiesta non è stata inviata.';
+        err.classList.add('show');
         return;
       }
 
-      fetch(SHEETS_ENDPOINT, {
+      var formData = new FormData(form);
+      formData.set('access_key', accessKey);
+
+      fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: {'Content-Type': 'text/plain;charset=utf-8'},
-        body: JSON.stringify(payload)
+        headers: { 'Accept': 'application/json' },
+        body: formData
       })
-      .then(function(){
-        msg.classList.add('show');
-        form.querySelectorAll('input, select, button').forEach(function(el){ el.disabled = true; });
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data.success){
+          msg.classList.add('show');
+          form.querySelectorAll('input, select, button').forEach(function(el){ el.disabled = true; });
+        } else {
+          throw new Error(data.message || 'Invio non riuscito');
+        }
       })
-      .catch(function(err){
-        console.error('Errore invio dati:', err);
+      .catch(function(e){
+        console.error('Errore invio form:', e);
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Riprova →';
+        submitBtn.textContent = originalLabel;
+        err.classList.add('show');
       });
     });
   }
 
-  handleForm('form-demo', 'demo-msg', 'Demo', ['nome','azienda','email','settore']);
-  handleForm('form-waitlist', 'wl-msg', 'Waitlist', ['email','ruolo']);
+  handleForm('form-demo', 'demo-msg', 'demo-err');
+  handleForm('form-waitlist', 'wl-msg', 'wl-err');
 </script>
 
 </body>
