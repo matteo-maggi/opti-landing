@@ -1,0 +1,15 @@
+{
+  "name": "generate-qr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Genera i QR SVG per i biglietti da visita e i materiali di fiera di OPTI",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
