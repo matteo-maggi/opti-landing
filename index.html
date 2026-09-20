@@ -65,8 +65,9 @@
   nav .links a:hover{color:var(--navy-900);}
   .btn-nav{
     background:var(--navy-900); color:var(--white) !important;
-    padding:10px 20px; border-radius:6px; font-size:14px; font-weight:500;
+    padding:13px 20px; border-radius:6px; font-size:14px; font-weight:500;
     text-decoration:none; transition:background .15s;
+    display:inline-flex; align-items:center;
   }
   .btn-nav:hover{background:var(--coral);}
 
@@ -248,13 +249,19 @@
   .field{margin-bottom:14px;}
   .field label{display:block; font-size:12px; font-weight:500; color:var(--navy-600); margin-bottom:6px;}
   .field input, .field select, .field textarea{
-    width:100%; padding:11px 14px; border:1px solid var(--line); border-radius:7px;
+    width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:7px;
     font-family:var(--body); font-size:14px; background:var(--white); color:var(--navy-900);
   }
   .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--navy-500); outline-offset:1px; border-color:var(--navy-500);}
   .form-msg{font-size:13px; margin-top:12px; display:none;}
   .form-msg.show{display:block;}
   .form-msg.ok{color:#1a7a4c;}
+
+  /* flex/grid items default to a content-based min-width, which stops text
+     from wrapping on narrow viewports and gets clipped by overflow-x:hidden */
+  .hero-grid > *, nav .wrap > *, .problem-grid > *, .value-grid > *, .cta-grid > *, .hero-ctas > *{
+    min-width:0;
+  }
 
   /* ---------- footer ---------- */
   footer{background:var(--navy-900); color:var(--navy-300); padding:48px 0 32px;}
@@ -310,8 +317,8 @@
     <div class="hero-visual">
       <div class="device">
         <div class="device-screen">
-          <video autoplay muted loop playsinline>
-            <source src="assets/AR%20to%20Technical%20Drawing.mp4" type="video/mp4">
+          <video id="hero-video" muted loop playsinline preload="metadata">
+            <source src="assets/ar-to-technical-drawing.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -447,6 +454,11 @@
 </footer>
 
 <script>
+  var heroVideo = document.getElementById('hero-video');
+  if(heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    heroVideo.play().catch(function(){});
+  }
+
   var SHEETS_ENDPOINT = "INSERISCI_QUI_URL_WEB_APP";
 
   function handleForm(formId, msgId, sheetName, fields){
