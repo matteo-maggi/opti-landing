@@ -73,9 +73,13 @@
     <div class="hero-visual">
       <div class="device">
         <div class="device-screen">
-          <video id="hero-video" muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+          <video id="hero-video" muted loop playsinline preload="none" poster="assets/hero-poster.jpg">
             <source src="assets/ar-to-technical-drawing.mp4" type="video/mp4">
           </video>
+          <button type="button" id="hero-play" class="video-play" hidden>
+            <span class="video-play-icon" aria-hidden="true">▶</span>
+            <span class="video-play-label">Guarda come funziona</span>
+          </button>
         </div>
       </div>
     </div>
@@ -273,10 +277,41 @@
 </footer>
 
 <script>
-  var heroVideo = document.getElementById('hero-video');
-  if(heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    heroVideo.play().catch(function(){});
-  }
+  // Il video pesa 1,7 MB: in fiera, su rete mobile, non deve partire da solo
+  // prima che si veda il titolo. Da smartphone resta il poster con un pulsante,
+  // e il file si scarica solo se lo si tocca (preload="none").
+  // Su schermi grandi parte da solo, salvo prefers-reduced-motion.
+  (function(){
+    var heroVideo = document.getElementById('hero-video');
+    var playBtn = document.getElementById('hero-play');
+    if(!heroVideo){ return; }
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var small = window.matchMedia('(max-width: 860px)').matches;
+
+    function avvia(){
+      if(playBtn){ playBtn.hidden = true; }
+      heroVideo.play().catch(function(){
+        // se il browser rifiuta comunque, il poster resta: nessuna schermata vuota
+        if(playBtn){ playBtn.hidden = false; }
+      });
+    }
+
+    if(playBtn){
+      playBtn.addEventListener('click', function(){
+        window.optiTrack('hero_video_play', { src: (function(){
+          try { return sessionStorage.getItem('opti_src') || 'direct'; } catch(e){ return 'direct'; }
+        })() });
+        avvia();
+      });
+    }
+
+    if(small || reduced){
+      if(playBtn){ playBtn.hidden = false; }
+    } else {
+      avvia();
+    }
+  })();
 
   // ---------- tracciamento sorgente (?src=, utm_*) ----------
   // Valori attesi per src: bimu, at-vicenza, linkedin, biglietto. Assente -> direct.
