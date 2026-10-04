@@ -62,30 +62,19 @@
         <p class="hero-note">20 minuti in video · Un tuo caso concreto · Nessun impegno</p>
         <div class="hero-under">Per chi costruisce macchine, realizza impianti e lavora in cantiere.</div>
       </div>
-      <figure class="visual" style="margin-inline:0" aria-label="Esempio illustrativo di dossier di sopralluogo con ingombri, annotazioni e report">
-        <div class="dossier">
-          <div class="dossier-head"><div class="project-name">Sopralluogo / Area di intervento<small>Foto, misure e note di progetto</small></div><span class="doc-code">PRJ / 001</span></div>
-          <div class="drawing"><div class="drawing-label mono">Una quota. Una nota. Il suo contesto.</div>
-            <svg viewBox="0 0 430 280" role="img" aria-label="Schema illustrativo di uno spazio con area di intervento e accesso da verificare">
-              <defs><pattern id="grid" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M17 0H0V17" fill="none" stroke="#dce3da" stroke-width=".5"/></pattern><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#acc0b1" stroke-width="2"/></pattern></defs>
-              <rect width="430" height="280" fill="url(#grid)"/>
-              <g stroke="#5d7163" stroke-width="5" fill="#f3f6ef"><path d="M54 44H365V238H290M240 238H54Z"/><path d="M54 170H116V238" fill="none"/><path d="M301 44V88H365" fill="none"/></g>
-              <path d="M290 239v-49a49 49 0 0 0-49 49" stroke="#819783" stroke-width="1.2" stroke-dasharray="3 3" fill="none"/>
-              <g fill="#6a7b6b"><rect x="50" y="40" width="10" height="10"/><rect x="360" y="40" width="10" height="10"/><rect x="50" y="234" width="10" height="10"/><rect x="360" y="234" width="10" height="10"/></g>
-              <rect x="136" y="76" width="147" height="128" rx="2" fill="url(#hatch)" stroke="#8da593" stroke-dasharray="4 4"/>
-              <rect x="151" y="91" width="116" height="99" rx="2" fill="#e2e9df" stroke="#78917d" stroke-width="1.3"/>
-              <path d="M165 103h33v74h-33zm44 0h43v49h-43zm0 59h43v15h-43z" fill="#c6d4c4" stroke="#8da18c"/>
-              <g font-family="Arial,sans-serif" fill="#526b57" text-anchor="middle"><text x="210" y="224" font-size="9" letter-spacing="1">AREA DI INTERVENTO</text><text x="84" y="209" font-size="8">SERVIZI</text></g>
-              <g stroke="#91a28d" stroke-width="1" fill="none"><path d="M54 21H365M54 15v13m311-13v13M30 44v194M24 44h12m-12 194h12"/><path d="m57 18-6 6m317-6-6 6M27 47l6-6m-6 200 6-6"/></g><rect x="182" y="13" width="56" height="17" fill="#f9faf6"/><text x="210" y="24" text-anchor="middle" font-family="monospace" font-size="10" fill="#617961">18,00 m</text>
-              <path d="M302 151h-27v-27" stroke="#ba5536" stroke-width="1.5" fill="none"/><circle cx="275" cy="124" r="9" fill="#bb4828" stroke="white" stroke-width="3"/>
-              <path d="M280 255h66" stroke="#ba5536" stroke-width="1.4"/><path d="m342 251 5 4-5 4" stroke="#ba5536" fill="none"/><text x="270" y="268" font-family="monospace" font-size="8" fill="#865441">ACCESSO DA VERIFICARE</text>
-            </svg>
-          </div>
-          <div class="dossier-info"><div><small>Raccolto sul posto</small><b>Foto + note + misure</b></div><div><small>Da portare in ufficio</small><b>Un progetto ordinato</b></div></div>
+      <figure class="visual" style="margin-inline:0">
+        <div class="video-frame">
+          <video id="hero-video" muted loop playsinline preload="none" poster="assets/demo-poster.jpg"
+                 width="1100" height="618" aria-label="Animazione: dal sopralluogo in stabilimento alla proposta, passando per foto, note e PDF">
+            <source src="assets/demo-sopralluogo.mp4" type="video/mp4">
+            <p>Il tuo browser non riproduce il video. <a href="assets/demo-sopralluogo.mp4">Scaricalo qui</a>.</p>
+          </video>
+          <button type="button" id="hero-play" class="video-play" hidden>
+            <span class="video-play-icon" aria-hidden="true">▶</span>
+            <span>Guarda come funziona</span>
+          </button>
         </div>
-        <div class="annotation"><span>Nota di sopralluogo</span>Verificare la larghezza del passaggio e gli ingombri.</div>
-        <div class="pdf-card"><span class="pdf-icon">PDF</span><div><b>Il sopralluogo, pronto da condividere.</b><small>Le informazioni raccolte restano insieme.</small></div></div>
-        <figcaption class="visual-caption">Esempio illustrativo del risultato, non schermata dell'app.</figcaption>
+        <figcaption class="visual-caption">Animazione illustrativa del flusso, non schermata dell'app.</figcaption>
       </figure>
     </div>
   </section>
@@ -349,6 +338,29 @@
       });
     });
   });
+
+  // ---------- video della hero ----------
+  // 2,7 MB: su smartphone resta il poster con un pulsante e il file si scarica
+  // solo al tocco (preload="none"). Su schermi grandi parte da solo, salvo
+  // prefers-reduced-motion.
+  (function(){
+    var video = document.getElementById('hero-video');
+    var play = document.getElementById('hero-play');
+    if(!video) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var small = window.matchMedia('(max-width: 760px)').matches;
+    function avvia(){
+      if(play) play.hidden = true;
+      video.play().catch(function(){ if(play) play.hidden = false; });
+    }
+    if(play){
+      play.addEventListener('click', function(){
+        window.optiTrack('hero_video_play', { src: currentSrc() });
+        avvia();
+      });
+    }
+    if(small || reduced){ if(play) play.hidden = false; } else { avvia(); }
+  })();
 
   // ---------- barra fissa su mobile ----------
   var sticky = document.getElementById('mobile-cta');
