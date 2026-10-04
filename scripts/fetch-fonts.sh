@@ -5,7 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-FAMILIES="family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500"
+FAMILIES="family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500"
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
 
 curl -sf -A "$UA" "https://fonts.googleapis.com/css2?${FAMILIES}&display=swap" -o /tmp/opti-gf.css

@@ -10,7 +10,7 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT=8791
 # Il nome ha una versione: cambiarlo obbliga WhatsApp/LinkedIn a riscaricare
 # l'anteprima invece di servire quella vecchia dalla cache.
-OUT="assets/og-image-v2.jpg"
+OUT="assets/og-image-v3.jpg"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"; kill %1 2>/dev/null || true' EXIT
 

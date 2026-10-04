@@ -2,9 +2,10 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPTI — Dal sopralluogo alla proposta, senza tornare dal cliente</title>
-<meta name="description" content="OPTI raccoglie in un unico progetto foto, note, annotazioni e requisiti dello stabilimento, così chi vende macchinari e impianti industriali prepara la proposta tecnica senza tornare dal cliente.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f4f0">
+<title>OPTI — Ripartiamo dal tuo prossimo sopralluogo</title>
+<meta name="description" content="In cantiere o nello stabilimento del cliente raccogli foto, misure e note: con OPTI le ritrovi nello stesso progetto quando prepari un'offerta o passi il lavoro a un collega. Fissiamo 20 minuti.">
 <link rel="canonical" href="https://optiapp.it/">
 
 <!-- Anteprima del link su WhatsApp, LinkedIn e simili.
@@ -14,19 +15,17 @@
 <meta property="og:site_name" content="OPTI">
 <meta property="og:locale" content="it_IT">
 <meta property="og:url" content="https://optiapp.it/">
-<meta property="og:title" content="OPTI — Dal sopralluogo alla proposta, senza tornare dal cliente">
-<meta property="og:description" content="OPTI raccoglie in un unico progetto foto, note, annotazioni e requisiti dello stabilimento, così chi vende macchinari e impianti industriali prepara la proposta tecnica senza tornare dal cliente.">
-<meta property="og:image" content="https://optiapp.it/assets/og-image-v2.jpg">
+<meta property="og:title" content="OPTI — Ripartiamo dal tuo prossimo sopralluogo">
+<meta property="og:description" content="Foto, misure e note di sopralluogo nello stesso progetto, da ritrovare quando prepari l'offerta. Fissiamo 20 minuti.">
+<meta property="og:image" content="https://optiapp.it/assets/og-image-v3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="OPTI — Dal sopralluogo alla proposta, senza tornare dal cliente">
+<meta property="og:image:alt" content="OPTI — Ripartiamo dal tuo prossimo sopralluogo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OPTI — Dal sopralluogo alla proposta, senza tornare dal cliente">
-<meta name="twitter:description" content="OPTI raccoglie in un unico progetto foto, note, annotazioni e requisiti dello stabilimento, così chi vende macchinari e impianti industriali prepara la proposta tecnica senza tornare dal cliente.">
-<meta name="twitter:image" content="https://optiapp.it/assets/og-image-v2.jpg">
-<!-- SVG favicon, scala a qualsiasi dimensione e segue il tema del browser
-     (Chrome/Firefox/Edge). rel="icon" PNG senza media: fallback per i
-     browser (es. Safari) che non supportano favicon SVG o prefers-color-scheme. -->
+<meta name="twitter:title" content="OPTI — Ripartiamo dal tuo prossimo sopralluogo">
+<meta name="twitter:description" content="Foto, misure e note di sopralluogo nello stesso progetto, da ritrovare quando prepari l'offerta. Fissiamo 20 minuti.">
+<meta name="twitter:image" content="https://optiapp.it/assets/og-image-v3.jpg">
+
 <link rel="icon" type="image/png" href="assets/favicon-navy-32.png">
 <link rel="icon" type="image/svg+xml" href="assets/logo-dark.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/svg+xml" href="assets/logo-white.svg" media="(prefers-color-scheme: dark)">
@@ -34,7 +33,7 @@
 <link rel="preload" href="assets/fonts/space-grotesk-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="landing.css">
 <!-- bump ?v= quando cambia config.js: è in cache 10 minuti (max-age=600)
      e senza URL nuovo il browser non ricontrolla la rete -->
 <script src="config.js?v=3"></script>
@@ -42,170 +41,115 @@
 </head>
 <body>
 
-<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 
-<nav>
-  <div class="wrap">
-    <div class="brand"><img src="assets/logo-dark.svg" alt="">OPTI</div>
-    <div class="links">
-      <a href="#problema">Il problema</a>
-      <a href="#flusso">Come funziona</a>
-    </div>
-    <a href="#richiedi-demo" class="btn-nav">Parliamo</a>
-  </div>
-</nav>
+<header>
+  <nav class="nav wrap" aria-label="Navigazione principale">
+    <a class="brand" href="#" aria-label="OPTI, torna all'inizio"><img src="assets/logo-dark.svg" alt="" width="31" height="31">OPTI</a>
+    <div class="nav-center">Il sopralluogo, tutto insieme <span></span> Foto, note, misure</div>
+    <a class="button small" href="#richiedi-demo" data-cta="demo">Fissiamo 20 minuti <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
 
 <main id="contenuto">
-
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow"><span class="dot"></span>Per chi vende macchinari e impianti industriali</span>
-      <h1>Dal sopralluogo alla proposta,<br><span class="hl">senza tornare dal cliente</span></h1>
-      <p class="hero-sub">OPTI raccoglie in un unico progetto foto, note, annotazioni e requisiti dello stabilimento, così prepari la proposta tecnica con tutto quello che ti serve.</p>
-      <div class="hero-ctas">
-        <a href="#richiedi-demo" class="btn-primary">Raccontami come lavori (20 min) →</a>
-        <a href="#waitlist" class="btn-secondary">Seguine lo sviluppo</a>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow mono"><span class="dot"></span>Ci siamo incontrati in fiera</div>
+        <h1 id="hero-title">Ripartiamo dal tuo prossimo <em>sopralluogo.</em></h1>
+        <p class="hero-lead">In cantiere o nello stabilimento del cliente, raccogli foto, misure e dettagli da ricordare. Con OPTI li ritrovi <strong>nello stesso progetto</strong>, quando prepari un'offerta o passi il lavoro a un collega.</p>
+        <a class="button" id="hero-cta" href="#richiedi-demo" data-cta="demo">Scegli quando risentirci <span class="arrow" aria-hidden="true">↗</span></a>
+        <p class="hero-note">20 minuti in video · Un tuo caso concreto · Nessun impegno</p>
+        <div class="hero-under">Per chi costruisce macchine, realizza impianti e lavora in cantiere.</div>
       </div>
-      <p class="hero-micro">Non è una vendita: sto costruendo OPTI insieme a chi fa questo lavoro.</p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="device">
-        <div class="device-screen">
-          <video id="hero-video" muted loop playsinline preload="none" poster="assets/hero-poster.jpg">
-            <source src="assets/ar-to-technical-drawing.mp4" type="video/mp4">
-          </video>
-          <button type="button" id="hero-play" class="video-play" hidden>
-            <span class="video-play-icon" aria-hidden="true">▶</span>
-            <span class="video-play-label">Guarda come funziona</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="problem" id="problema">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">// il problema</span>
-      <h2>Il lavoro vero comincia quando esci dallo stabilimento.</h2>
-    </div>
-    <!-- TODO: queste tre card sono ipotesi da validare in fiera (BIMU, A&T Vicenza).
-         Dopo le interviste, sostituirle con le parole reali dei tecnici commerciali. -->
-    <div class="problem-grid">
-      <div class="problem-card">
-        <span class="pn">01</span>
-        <h3>Le informazioni sono ovunque</h3>
-        <p>Foto nella galleria del telefono, misure su un foglio, requisiti detti a voce o su WhatsApp. A fine sopralluogo il progetto è sparso su cinque strumenti diversi.</p>
-      </div>
-      <div class="problem-card">
-        <span class="pn">02</span>
-        <h3>Manca sempre un dato</h3>
-        <p>Una quota, un accesso, un vincolo dell'impianto: te ne accorgi in ufficio, quando ormai tocca richiamare il cliente o tornare sul posto.</p>
-      </div>
-      <div class="problem-card">
-        <span class="pn">03</span>
-        <h3>La proposta riparte da zero</h3>
-        <p>Ricostruire a memoria quello che hai visto richiede ore, e per strada si perde il contesto che avevi chiaro davanti alla macchina.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="flow" id="flusso">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">// cosa fa opti</span>
-      <h2>Un solo progetto, dal sopralluogo al PDF.</h2>
-    </div>
-
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="card-top"><span class="pn">01</span><span class="badge badge-live">disponibile</span></div>
-        <h3>Un progetto per ogni cliente e stabilimento</h3>
-        <p>Foto, note e file nello stesso posto, divisi per cliente e per impianto. Ritrovi tutto anche settimane dopo, senza cercare tra galleria e email.</p>
-      </div>
-      <div class="value-card">
-        <div class="card-top"><span class="pn">02</span><span class="badge badge-live">disponibile</span></div>
-        <h3>Annoti sul posto</h3>
-        <p>Ingombri, accessi e vincoli annotati direttamente sulle foto, mentre sei davanti alla macchina e hai ancora il cliente accanto.</p>
-      </div>
-      <div class="value-card">
-        <div class="card-top"><span class="pn">03</span><span class="badge badge-live">disponibile</span></div>
-        <h3>Esporti quando serve</h3>
-        <p>Un PDF ordinato da passare all'ufficio tecnico o da allegare alla proposta, con dentro tutto quello che hai raccolto.</p>
-      </div>
-    </div>
-
-    <div class="modules">
-      <h3 class="modules-head">Moduli in sviluppo</h3>
-      <p class="modules-sub">Ci stiamo lavorando: non sono ancora utilizzabili in trattativa.</p>
-      <div class="modules-grid">
-        <div class="module-card">
-          <span class="badge badge-soon">in arrivo</span>
-          <h4>Catalogo digitale delle macchine</h4>
-          <p>Modello 3D, schemi 2D, foto, video e configurazioni della gamma, sempre con te e sempre aggiornati.</p>
-        </div>
-        <div class="module-card">
-          <span class="badge badge-soon">in arrivo</span>
-          <h4>Proiezione AR nello spazio reale</h4>
-          <p>Il macchinario a grandezza naturale nello stabilimento del cliente o allo stand, per far vedere come si inserisce.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section" id="richiedi-demo">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">// uniamoci all'inizio</span>
-      <h2>OPTI è un prototipo in validazione. Aiutami a costruirlo.</h2>
-      <p class="section-sub">Sto parlando con chi vende macchinari e impianti industriali per capire come si lavora davvero dopo un sopralluogo. Due modi per entrare in contatto.</p>
-    </div>
-
-    <div class="cta-grid">
-      <div class="cta-panel">
-        <span class="tag">Per chi vende macchinari, oggi</span>
-        <h3>Raccontami come lavori</h3>
-        <p>Venti minuti al telefono: come prepari la proposta dopo un sopralluogo e dove perdi più tempo. Niente presentazione da vendere.</p>
-        <form id="form-demo">
-          <div class="field">
-            <label for="demo-nome">Nome e cognome</label>
-            <input type="text" id="demo-nome" name="nome" autocomplete="name" required>
+      <figure class="visual" style="margin-inline:0" aria-label="Esempio illustrativo di dossier di sopralluogo con ingombri, annotazioni e report">
+        <div class="dossier">
+          <div class="dossier-head"><div class="project-name">Sopralluogo / Area di intervento<small>Foto, misure e note di progetto</small></div><span class="doc-code">PRJ / 001</span></div>
+          <div class="drawing"><div class="drawing-label mono">Una quota. Una nota. Il suo contesto.</div>
+            <svg viewBox="0 0 430 280" role="img" aria-label="Schema illustrativo di uno spazio con area di intervento e accesso da verificare">
+              <defs><pattern id="grid" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M17 0H0V17" fill="none" stroke="#dce3da" stroke-width=".5"/></pattern><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#acc0b1" stroke-width="2"/></pattern></defs>
+              <rect width="430" height="280" fill="url(#grid)"/>
+              <g stroke="#5d7163" stroke-width="5" fill="#f3f6ef"><path d="M54 44H365V238H290M240 238H54Z"/><path d="M54 170H116V238" fill="none"/><path d="M301 44V88H365" fill="none"/></g>
+              <path d="M290 239v-49a49 49 0 0 0-49 49" stroke="#819783" stroke-width="1.2" stroke-dasharray="3 3" fill="none"/>
+              <g fill="#6a7b6b"><rect x="50" y="40" width="10" height="10"/><rect x="360" y="40" width="10" height="10"/><rect x="50" y="234" width="10" height="10"/><rect x="360" y="234" width="10" height="10"/></g>
+              <rect x="136" y="76" width="147" height="128" rx="2" fill="url(#hatch)" stroke="#8da593" stroke-dasharray="4 4"/>
+              <rect x="151" y="91" width="116" height="99" rx="2" fill="#e2e9df" stroke="#78917d" stroke-width="1.3"/>
+              <path d="M165 103h33v74h-33zm44 0h43v49h-43zm0 59h43v15h-43z" fill="#c6d4c4" stroke="#8da18c"/>
+              <g font-family="Arial,sans-serif" fill="#526b57" text-anchor="middle"><text x="210" y="224" font-size="9" letter-spacing="1">AREA DI INTERVENTO</text><text x="84" y="209" font-size="8">SERVIZI</text></g>
+              <g stroke="#91a28d" stroke-width="1" fill="none"><path d="M54 21H365M54 15v13m311-13v13M30 44v194M24 44h12m-12 194h12"/><path d="m57 18-6 6m317-6-6 6M27 47l6-6m-6 200 6-6"/></g><rect x="182" y="13" width="56" height="17" fill="#f9faf6"/><text x="210" y="24" text-anchor="middle" font-family="monospace" font-size="10" fill="#617961">18,00 m</text>
+              <path d="M302 151h-27v-27" stroke="#ba5536" stroke-width="1.5" fill="none"/><circle cx="275" cy="124" r="9" fill="#bb4828" stroke="white" stroke-width="3"/>
+              <path d="M280 255h66" stroke="#ba5536" stroke-width="1.4"/><path d="m342 251 5 4-5 4" stroke="#ba5536" fill="none"/><text x="270" y="268" font-family="monospace" font-size="8" fill="#865441">ACCESSO DA VERIFICARE</text>
+            </svg>
           </div>
-          <div class="field">
-            <label for="demo-azienda">Azienda</label>
-            <input type="text" id="demo-azienda" name="azienda" autocomplete="organization" required>
-          </div>
-          <div class="field">
-            <label for="demo-email">Email di lavoro</label>
-            <input type="email" id="demo-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="demo-ruolo">Il tuo ruolo</label>
+          <div class="dossier-info"><div><small>Raccolto sul posto</small><b>Foto + note + misure</b></div><div><small>Da portare in ufficio</small><b>Un progetto ordinato</b></div></div>
+        </div>
+        <div class="annotation"><span>Nota di sopralluogo</span>Verificare la larghezza del passaggio e gli ingombri.</div>
+        <div class="pdf-card"><span class="pdf-icon">PDF</span><div><b>Il sopralluogo, pronto da condividere.</b><small>Le informazioni raccolte restano insieme.</small></div></div>
+        <figcaption class="visual-caption">Esempio illustrativo del risultato, non schermata dell'app.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="proof-strip wrap" aria-label="Cosa aspettarti"><span><b class="check">✓</b> Prototipo in validazione</span><span><b class="check">✓</b> Il tuo sopralluogo al centro</span><span><b class="check">✓</b> Nessun impegno d'acquisto</span></div>
+
+  <section class="benefits wrap" id="come-funziona" aria-labelledby="benefit-title">
+    <div class="section-intro"><div><div class="mono muted">Dal sopralluogo all'ufficio</div><h2 id="benefit-title">Il contesto resta.<br>Anche quando torni in ufficio.</h2></div><p>Gli spazi per una nuova macchina, gli accessi di un cantiere, i vincoli di un impianto. Cambia il progetto, resta il bisogno di ritrovare ogni dettaglio.</p></div>
+    <div class="benefit-grid">
+      <article class="benefit"><div class="benefit-number">01 / RACCOGLI<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 3h9v12H3Z"/><path d="M3 9h18"/></svg></div><h3>Ogni sopralluogo, il suo contesto.</h3><p>Riunisci foto, note e file in un progetto. Ritrovi quello che hai raccolto senza ricostruire tutto tra galleria e messaggi.</p></article>
+      <article class="benefit"><div class="benefit-number">02 / ANNOTA<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 11-11 4 4L9 19l-6 2Z"/><path d="m14 6 4 4M5 15l4 4"/></svg></div><h3>I dettagli, mentre li hai davanti.</h3><p>Aggiungi misure e annotazioni alle foto. Un accesso, un ingombro, un punto da verificare: ogni nota conserva il suo riferimento.</p></article>
+      <article class="benefit"><div class="benefit-number">03 / CONDIVIDI<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5Z"/><path d="M14 2v6h5M8 12h8m-8 4h8"/></svg></div><h3>Un PDF per il passo successivo.</h3><p>Esporta quello che hai raccolto e condividilo con un collega o con il cliente. Una base ordinata per proseguire il lavoro.</p></article>
+    </div>
+  </section>
+
+  <section class="booking-section" id="richiedi-demo" aria-labelledby="booking-title">
+    <div class="booking-grid wrap">
+      <div class="booking-copy">
+        <div class="eyebrow mono"><span class="dot"></span>La conversazione continua</div>
+        <h2 id="booking-title">In fiera ci siamo presentati.<br>Ora entriamo nel concreto.</h2>
+        <p>Pensa a un sopralluogo recente. Ci racconti come lavori, ti mostriamo il prototipo e capiamo insieme se OPTI può esserti utile nel passaggio dal rilievo al lavoro in ufficio.</p>
+        <ol class="agenda">
+          <li><time>5 min</time><div><b>Partiamo dal tuo lavoro</b><span>Come raccogli e passi oggi le informazioni.</span></div></li>
+          <li><time>10 min</time><div><b>Guardiamo il prototipo insieme</b><span>Foto, annotazioni e PDF applicati al tuo caso.</span></div></li>
+          <li><time>5 min</time><div><b>Capiamo se ha senso proseguire</b><span>Cosa ti servirebbe davvero per provarlo.</span></div></li>
+        </ol>
+        <p class="call-fine">Non serve preparare documenti o installare nulla.<br>Preferisci scriverci? <a href="mailto:info@optiapp.it">info@optiapp.it</a></p>
+      </div>
+
+      <div class="booking-card" id="booking-card">
+        <div class="booking-top"><h3>Troviamo un momento.</h3><span class="duration">20 min · Video</span></div>
+        <p class="card-lead">Lasciami i tuoi riferimenti e quando ti è più comodo: ti scrivo entro 48 ore con due o tre orari possibili.</p>
+
+        <form id="form-demo" novalidate>
+          <label class="form-field" for="demo-nome">Come ti chiami?
+            <input id="demo-nome" name="nome" autocomplete="name" required maxlength="100" placeholder="Nome e cognome">
+          </label>
+          <label class="form-field" for="demo-email">Email di lavoro
+            <input id="demo-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="nome@azienda.it">
+          </label>
+          <label class="form-field" for="demo-azienda">Azienda <span>(facoltativo)</span>
+            <input id="demo-azienda" name="azienda" autocomplete="organization" maxlength="160" placeholder="La tua azienda">
+          </label>
+          <label class="form-field" for="demo-ruolo">Di cosa ti occupi
             <select id="demo-ruolo" name="ruolo">
-              <option>Commerciale tecnico</option>
+              <option>Costruzione macchine o impianti</option>
+              <option>Impresa di costruzioni o cantiere</option>
               <option>Ufficio tecnico</option>
-              <option>Titolare / direzione</option>
+              <option>Titolare o direzione</option>
               <option>Altro</option>
             </select>
-          </div>
-          <div class="field">
-            <label for="demo-settore">Cosa vendete</label>
-            <select id="demo-settore" name="settore">
-              <option>Macchinari custom</option>
-              <option>Impianti industriali</option>
-              <option>Linee di automazione</option>
-              <option>Altro macchinario industriale</option>
+          </label>
+          <label class="form-field" for="demo-quando">Quando ti è più comodo
+            <select id="demo-quando" name="quando">
+              <option>Sono flessibile</option>
+              <option>Mattina (9-12)</option>
+              <option>Primo pomeriggio (14-16)</option>
+              <option>Tardo pomeriggio (16-19)</option>
             </select>
-          </div>
-          <div class="field">
-            <label for="demo-metodo">Come prepari oggi la proposta dopo un sopralluogo? <span class="optional">(facoltativo)</span></label>
-            <textarea id="demo-metodo" name="metodo" rows="3"></textarea>
-          </div>
+          </label>
+          <label class="form-field" for="demo-caso">Un sopralluogo recente da raccontare <span>(facoltativo)</span>
+            <textarea id="demo-caso" name="caso" rows="3" maxlength="1200" placeholder="Anche due righe: dove eri, cosa dovevi raccogliere, cosa è stato scomodo."></textarea>
+          </label>
+
           <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="subject" value="OPTI · richiesta call dal sito">
           <input type="hidden" name="form_type" value="demo">
@@ -214,228 +158,212 @@
           <input type="hidden" name="utm_medium">
           <input type="hidden" name="utm_campaign">
           <input type="hidden" name="page_url">
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Prenotiamo 20 minuti →</button>
-          <p class="form-note">Uso i tuoi dati solo per ricontattarti su OPTI. <a href="/privacy.html">Informativa privacy</a>.</p>
-          <!-- TODO: aggiungere il link al profilo LinkedIn quando lo fornisci (P0-3). -->
-          <p class="form-msg ok" id="demo-msg">Grazie, richiesta ricevuta. Ti scrivo entro 48 ore per fissare la call. Se vuoi anticipare: <a href="mailto:info@optiapp.it">info@optiapp.it</a>.</p>
+
+          <button type="submit" class="button next">Fissiamo i 20 minuti <span aria-hidden="true">→</span></button>
+          <p class="privacy-note">Uso i tuoi dati solo per ricontattarti su OPTI. <a href="/privacy.html">Informativa privacy</a>.</p>
           <p class="form-msg err" id="demo-err">Invio non riuscito. Riprova, oppure scrivimi direttamente a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.</p>
         </form>
-      </div>
 
-      <div class="cta-panel alt" id="waitlist">
-        <span class="tag">Per seguire lo sviluppo</span>
-        <h3>Seguine lo sviluppo</h3>
-        <p>Niente spam: solo aggiornamenti veri su come sta evolvendo OPTI.</p>
-        <form id="form-waitlist">
-          <div class="field">
-            <label for="wl-email">La tua email</label>
-            <input type="email" id="wl-email" name="email" autocomplete="email" required placeholder="nome@azienda.it">
-          </div>
-          <div class="field">
-            <label for="wl-ruolo">Il tuo interesse principale</label>
-            <select id="wl-ruolo" name="ruolo">
-              <option>Vendite / commerciale tecnico</option>
-              <option>Ufficio tecnico</option>
-              <option>Titolare / direzione</option>
-              <option>Investitore / partner</option>
-              <option>Altro</option>
-            </select>
-          </div>
-          <div class="field field-consent">
-            <label class="consent-label">
-              <input type="checkbox" id="wl-consenso" name="consenso_aggiornamenti" value="Sì, acconsento a ricevere aggiornamenti su OPTI" required>
-              Acconsento a ricevere aggiornamenti su OPTI. Posso cancellarmi quando voglio. <a href="/privacy.html">Informativa privacy</a>.
-            </label>
-          </div>
-          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="subject" value="OPTI · nuova iscrizione waitlist">
-          <input type="hidden" name="form_type" value="waitlist">
-          <input type="hidden" name="src">
-          <input type="hidden" name="utm_source">
-          <input type="hidden" name="utm_medium">
-          <input type="hidden" name="utm_campaign">
-          <input type="hidden" name="page_url">
-          <button type="submit" class="btn-secondary" style="width:100%; justify-content:center;">Iscrivimi →</button>
-          <p class="form-msg ok" id="wl-msg">Iscrizione confermata. Ti aggiorno quando c'è qualcosa di concreto da mostrare.</p>
-          <p class="form-msg err" id="wl-err">Invio non riuscito. Riprova, oppure scrivimi direttamente a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.</p>
-        </form>
+        <div class="success" id="demo-success" hidden tabindex="-1">
+          <div class="success-symbol" aria-hidden="true">✓</div>
+          <h3>Ci siamo.</h3>
+          <p>Ti scrivo <strong>entro 48 ore</strong> con due o tre orari possibili, così scegli quello che ti torna meglio.</p>
+          <p>Se nel frattempo ti viene in mente qualcosa: <a href="mailto:info@optiapp.it">info@optiapp.it</a></p>
+        </div>
+
+        <noscript><p class="privacy-note">Per inviare il modulo serve JavaScript. Puoi scrivermi a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.</p></noscript>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="waitlist wrap" id="waitlist">
+      <div>
+        <h3>Non è il momento per una call?</h3>
+        <p>Lascia la mail e ti aggiorno quando c'è qualcosa di concreto da mostrare. Niente invii automatici, nessuno spam.</p>
+      </div>
+      <form id="form-waitlist" class="waitlist-form" novalidate>
+        <label for="wl-email">La tua email
+          <input id="wl-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="nome@azienda.it">
+        </label>
+        <button type="submit" class="button outline" style="color:#fff;border-color:#ffffff40">Tienimi aggiornato <span aria-hidden="true">→</span></button>
+        <label class="consent" for="wl-consenso">
+          <input type="checkbox" id="wl-consenso" name="consenso_aggiornamenti" value="Sì, acconsento a ricevere aggiornamenti su OPTI" required>
+          <span>Acconsento a ricevere aggiornamenti su OPTI. Posso cancellarmi quando voglio. <a href="/privacy.html">Informativa privacy</a>.</span>
+        </label>
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="subject" value="OPTI · nuova iscrizione waitlist">
+        <input type="hidden" name="form_type" value="waitlist">
+        <input type="hidden" name="src">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="page_url">
+        <p class="form-msg ok" id="wl-msg" style="color:#bccdb9">Fatto. Ti aggiorno quando c'è qualcosa di concreto da mostrare.</p>
+        <p class="form-msg err" id="wl-err" style="color:#f2ab8d">Invio non riuscito. Riprova, oppure scrivimi a <a href="mailto:info@optiapp.it">info@optiapp.it</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <div class="faq-intro"><div class="mono muted">Prima di risentirci</div><h2 id="faq-title">Due cose da sapere.</h2><p>Un confronto aperto, anche se stai già usando altri strumenti.</p></div>
+    <div class="questions">
+      <details><summary>La call è una demo o un confronto?</summary><p>Entrambe le cose: partiamo da come lavori oggi, ti mostriamo il prototipo e raccogliamo il tuo feedback. Alla fine decidiamo insieme se c'è un passo successivo utile.</p></details>
+      <details><summary>È pensato anche per il mio settore?</summary><p>Stiamo confrontandoci sia con costruttori di macchine e impianti, sia con tecnici e imprese delle costruzioni. Il punto di partenza è comune: raccogliere informazioni durante un sopralluogo e usarle per il passo successivo. La call serve a capire se il prototipo risponde alle tue esigenze specifiche e cosa manca.</p></details>
+      <details><summary>OPTI è già un prodotto completo?</summary><p>OPTI è un prototipo in validazione. Possiamo mostrarti la raccolta di foto, note e file, le annotazioni e l'esportazione PDF. Durante la call distinguiamo le funzioni presenti da quelle ancora in sviluppo, senza dare per scontato che copra già ogni esigenza del tuo settore.</p></details>
+      <details><summary>Uso già un gestionale, un CAD o un'altra app. Ha senso?</summary><p>Sì, ci interessa capire come gestisci oggi un sopralluogo, anche con gli strumenti che già utilizzi. Guardiamo il tuo flusso attuale e capiamo se c'è uno spazio utile per OPTI, senza dare per scontato che tu debba cambiare strumenti.</p></details>
+      <details><summary>Devo portare un progetto del cliente?</summary><p>No. Basta descrivere un caso recente, anche senza nomi, foto o documenti riservati. Non serve preparare una presentazione.</p></details>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="brand"><img src="assets/logo-white.svg" alt="">OPTI</div>
-    <div class="footer-legal">
-      <span class="fnote">Matteo Maggi · <a href="mailto:info@optiapp.it">info@optiapp.it</a></span>
-      <span class="fnote"><a href="/privacy.html">Privacy</a> · Prototipo in validazione, 2026</span>
-    </div>
+<footer class="footer">
+  <div class="footer-inner wrap">
+    <div class="footer-brand"><a class="brand" href="#">OPTI</a><small>Il sopralluogo, tutto insieme.<br>Prototipo in validazione · Matteo Maggi</small></div>
+    <div class="footer-links"><a href="mailto:info@optiapp.it">info@optiapp.it</a><a href="/privacy.html">Privacy</a></div>
   </div>
 </footer>
 
+<div class="mobile-cta is-hidden" id="mobile-cta"><a class="button" href="#richiedi-demo" data-cta="demo">Fissiamo la seconda call <span>20 min</span><b class="arrow" aria-hidden="true">↗</b></a></div>
+
 <script>
-  // Il video pesa 1,7 MB: in fiera, su rete mobile, non deve partire da solo
-  // prima che si veda il titolo. Da smartphone resta il poster con un pulsante,
-  // e il file si scarica solo se lo si tocca (preload="none").
-  // Su schermi grandi parte da solo, salvo prefers-reduced-motion.
-  (function(){
-    var heroVideo = document.getElementById('hero-video');
-    var playBtn = document.getElementById('hero-play');
-    if(!heroVideo){ return; }
-
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var small = window.matchMedia('(max-width: 860px)').matches;
-
-    function avvia(){
-      if(playBtn){ playBtn.hidden = true; }
-      heroVideo.play().catch(function(){
-        // se il browser rifiuta comunque, il poster resta: nessuna schermata vuota
-        if(playBtn){ playBtn.hidden = false; }
-      });
-    }
-
-    if(playBtn){
-      playBtn.addEventListener('click', function(){
-        window.optiTrack('hero_video_play', { src: (function(){
-          try { return sessionStorage.getItem('opti_src') || 'direct'; } catch(e){ return 'direct'; }
-        })() });
-        avvia();
-      });
-    }
-
-    if(small || reduced){
-      if(playBtn){ playBtn.hidden = false; }
-    } else {
-      avvia();
-    }
-  })();
+(function(){
+  var ENDPOINT = 'https://api.web3forms.com/submit';
 
   // ---------- tracciamento sorgente (?src=, utm_*) ----------
-  // Valori attesi per src: bimu, at-vicenza, linkedin, biglietto. Assente -> direct.
-  (function captureTracking(){
+  // Valori attesi per src: biglietto, bimu, at-vicenza, linkedin. Assente -> direct.
+  var TRACK = ['src','utm_source','utm_medium','utm_campaign'];
+  (function capture(){
     var params = new URLSearchParams(window.location.search);
-    var keys = ['src', 'utm_source', 'utm_medium', 'utm_campaign'];
-    keys.forEach(function(key){
-      var fromUrl = params.get(key);
-      if(fromUrl){
-        sessionStorage.setItem('opti_' + key, fromUrl);
-      }
+    TRACK.forEach(function(key){
+      var v = params.get(key);
+      if(v){ try { sessionStorage.setItem('opti_' + key, v.slice(0,80)); } catch(e){} }
     });
-    if(!sessionStorage.getItem('opti_src')){
-      sessionStorage.setItem('opti_src', 'direct');
-    }
+    try { if(!sessionStorage.getItem('opti_src')) sessionStorage.setItem('opti_src','direct'); } catch(e){}
   })();
 
-  function fillTrackingFields(form){
-    ['src', 'utm_source', 'utm_medium', 'utm_campaign'].forEach(function(key){
+  function currentSrc(){
+    try { return sessionStorage.getItem('opti_src') || 'direct'; } catch(e){ return 'direct'; }
+  }
+
+  function fillTracking(form){
+    TRACK.forEach(function(key){
       var field = form.querySelector('[name="' + key + '"]');
-      if(field){ field.value = sessionStorage.getItem('opti_' + key) || ''; }
+      if(field){ try { field.value = sessionStorage.getItem('opti_' + key) || ''; } catch(e){ field.value = ''; } }
     });
-    var pageUrlField = form.querySelector('[name="page_url"]');
-    if(pageUrlField){ pageUrlField.value = window.location.href; }
+    var page = form.querySelector('[name="page_url"]');
+    if(page){ page.value = window.location.href; }
   }
 
   // ---------- messaggi di validazione in italiano ----------
-  function applyItalianValidationMessages(form){
+  function italianValidation(form){
     form.querySelectorAll('input, select, textarea').forEach(function(el){
       el.addEventListener('invalid', function(){
         if(el.validity.valueMissing){
-          el.setCustomValidity('Campo obbligatorio.');
+          el.setCustomValidity(el.type === 'checkbox' ? 'Serve il tuo consenso per iscriverti.' : 'Campo obbligatorio.');
         } else if(el.validity.typeMismatch && el.type === 'email'){
           el.setCustomValidity('Inserisci un indirizzo email valido.');
         } else {
           el.setCustomValidity('Valore non valido.');
         }
       });
-      el.addEventListener('input', function(){ el.setCustomValidity(''); });
-      el.addEventListener('change', function(){ el.setCustomValidity(''); });
+      ['input','change'].forEach(function(ev){
+        el.addEventListener(ev, function(){ el.setCustomValidity(''); });
+      });
     });
   }
 
-  // ---------- invio form via Web3Forms ----------
-  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+  // ---------- invio reale via Web3Forms ----------
+  function handleForm(opts){
+    var form = document.getElementById(opts.form);
+    if(!form) return;
+    var err = document.getElementById(opts.err);
+    var okMsg = opts.ok ? document.getElementById(opts.ok) : null;
+    var success = opts.success ? document.getElementById(opts.success) : null;
 
-  function handleForm(formId, msgId, errId){
-    var form = document.getElementById(formId);
-    var msg = document.getElementById(msgId);
-    var err = document.getElementById(errId);
-
-    applyItalianValidationMessages(form);
+    italianValidation(form);
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
       err.classList.remove('show');
+      if(!form.reportValidity()) return;
 
       var honeypot = form.querySelector('[name="botcheck"]');
-      if(honeypot && honeypot.checked){ return; }
+      if(honeypot && honeypot.checked) return;
 
-      fillTrackingFields(form);
+      fillTracking(form);
 
-      var submitBtn = form.querySelector('button[type="submit"]');
-      var originalLabel = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Invio in corso…';
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.innerHTML;
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso…';
 
-      var accessKey = window.OPTI_CONFIG && window.OPTI_CONFIG.web3formsAccessKey;
-      if(!accessKey || accessKey.indexOf('INSERISCI_QUI') !== -1){
-        console.warn('Web3Forms non configurato: vedi config.js (web3formsAccessKey).');
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
+      var key = window.OPTI_CONFIG && window.OPTI_CONFIG.web3formsAccessKey;
+      if(!key){
+        btn.disabled = false;
+        btn.innerHTML = label;
         err.textContent = 'Modulo non ancora configurato: la richiesta non è stata inviata.';
         err.classList.add('show');
         return;
       }
 
-      var formData = new FormData(form);
-      formData.set('access_key', accessKey);
+      var data = new FormData(form);
+      data.set('access_key', key);
 
-      fetch(WEB3FORMS_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: formData
-      })
-      .then(function(res){ return res.json(); })
-      .then(function(data){
-        if(data.success){
+      fetch(ENDPOINT, { method:'POST', headers:{'Accept':'application/json'}, body:data })
+        .then(function(res){ return res.json(); })
+        .then(function(payload){
+          if(!payload.success) throw new Error(payload.message || 'invio non riuscito');
           window.optiTrack('form_submit', {
             form_type: form.querySelector('[name="form_type"]').value,
-            src: form.querySelector('[name="src"]').value || 'direct'
+            src: currentSrc()
           });
-          submitBtn.textContent = 'Inviato ✓';
-          msg.classList.add('show');
-          form.querySelectorAll('input, select, textarea, button').forEach(function(el){ el.disabled = true; });
-        } else {
-          throw new Error(data.message || 'Invio non riuscito');
-        }
-      })
-      .catch(function(e){
-        console.error('Errore invio form:', e);
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
-        err.classList.add('show');
-      });
+          if(success){
+            form.hidden = true;
+            var lead = document.querySelector('.card-lead');
+            if(lead) lead.hidden = true;
+            success.hidden = false;
+            success.focus({ preventScroll:true });
+          } else {
+            form.querySelectorAll('input, select, textarea, button').forEach(function(el){ el.disabled = true; });
+            if(okMsg) okMsg.classList.add('show');
+          }
+        })
+        .catch(function(e){
+          console.error('Errore invio form:', e);
+          btn.disabled = false;
+          btn.innerHTML = label;
+          err.classList.add('show');
+        });
     });
   }
 
-  handleForm('form-demo', 'demo-msg', 'demo-err');
-  handleForm('form-waitlist', 'wl-msg', 'wl-err');
+  handleForm({ form:'form-demo', err:'demo-err', success:'demo-success' });
+  handleForm({ form:'form-waitlist', err:'wl-err', ok:'wl-msg' });
 
-  // ---------- eventi analytics (no-op finché config.js non ha un provider) ----------
-  function currentSrc(){
-    try { return sessionStorage.getItem('opti_src') || 'direct'; } catch(e){ return 'direct'; }
-  }
-  document.querySelectorAll('a[href="#richiedi-demo"], a[href="#waitlist"]').forEach(function(link){
+  // ---------- eventi analytics (inerti finché config.js non ha un provider) ----------
+  document.querySelectorAll('[data-cta]').forEach(function(link){
     link.addEventListener('click', function(){
       window.optiTrack('cta_click', {
-        cta: link.getAttribute('href') === '#waitlist' ? 'waitlist' : 'demo',
-        posizione: link.closest('nav') ? 'nav' : 'pagina',
+        cta: link.getAttribute('data-cta'),
+        posizione: link.closest('header') ? 'nav' : (link.closest('.mobile-cta') ? 'barra-mobile' : 'pagina'),
         src: currentSrc()
       });
     });
   });
+
+  // ---------- barra fissa su mobile ----------
+  var sticky = document.getElementById('mobile-cta');
+  var heroCta = document.getElementById('hero-cta');
+  var card = document.getElementById('booking-card');
+  function updateSticky(){
+    var h = heroCta.getBoundingClientRect(), c = card.getBoundingClientRect();
+    var show = h.bottom < 0 && (c.bottom < 0 || c.top > window.innerHeight);
+    sticky.classList.toggle('is-hidden', !show);
+    sticky.inert = !show;
+  }
+  addEventListener('scroll', updateSticky, { passive:true });
+  addEventListener('resize', updateSticky);
+  updateSticky();
+})();
 </script>
 
 </body>
